@@ -13,7 +13,7 @@ De cada estampilla se conoce su valor "facial" (el que está impreso), el año d
 ![](estampillazarate.jpg)
 
 _Esta es de Argentina, su valor facial es de 300 pesos y fue emitida en 1979_
-.
+
 ![](estampillajapon.jpg)
 
 _Esta es de Japón, vale también 300 y es del año 1974_
@@ -51,6 +51,7 @@ Por ejemplo:
 7. Se agregan nuevo material filatélico, las "Hojitas block". Se considera todo como una unidad, pero a la vez contiene varias estampillas. Cada una de ellas tiene un valor facial, por lo que el valor facial de la hojita es la sumatoria del valores faciales de las estampillas que la componen. En general, el país y el año de emisión de la hojita coincide con los de sus componentes, pero en caso que no lo haga significa que está fallada. Para su cotización se consideran conmemorativas.
 
 ![](estampillarusia.jpg)
+
 _Hojita block de Rusia, 1989, con valor facial de 115. (Esta formada por 6 estampillas de diferente valor facial cada una, todas de Rusia del mismo año) Su cotización es de  690 (115 * 3 * 2, asumiendo que rusia tiene un coeficiente 3, el doble por ser conmemorativa y sin adicional de antigüedad)_
 
   -  Implementarlo para que todo siga funcionando. ¿Que conceptos facilitan esta incorporación?
