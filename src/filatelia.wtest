@@ -1,6 +1,63 @@
+import filatelia.*
 
-test "testX" {
 
-	assert.that(true)
+describe "test de filatelia" {
+
+//Esta es de Argentina, su valor facial es de 300 pesos y fue emitida en 1979
+// es conmemorativa y tiene por motivo "Complejo Zarate - Brazo Largo".
+	const estArg = new Conmemorativa(valor=300,emision=1979,pais=new Pais(coeficiente=1),motivo=["complejo","zarate","brazo largo"])
+
+//Esta es de Japón, vale también 300 y es del año 1974
+	const japon = new Pais(coeficiente=10)
+	const estJap = new Estampilla(valor=300,emision=1974,pais=japon)
+
+//Hojita block de Urss, de 1989, con valor facial de 115. (Esta formada por 6 estampillas de diferente valor facial cada una, todas de Urss del mismo año)
+	const urss = new Pais(coeficiente = 3,inicio = 1917,fin = 1991)
+	const e1 = new Estampilla(pais=urss,emision = 1989,valor=5) 
+	const e2 = new Estampilla(pais=urss,emision = 1989,valor=10) 
+	const e3 = new Estampilla(pais=urss,emision = 1989,valor=15) 
+	const e4 = new Estampilla(pais=urss,emision = 1989,valor=20) 
+	const e5 = new Estampilla(pais=urss,emision = 1989,valor=30) 
+	const e6 = new Estampilla(pais=urss,emision = 1989,valor=35) 
+	
+	const estUrss = new HojitaBlock(pais=urss,emision = 1989,motivo="Proceres sovieticos",estampillas = [e1,e2,e3,e4,e5,e6])
+
+test "La estampilla conmemorativa con motivo local sale el triple" {
+	//la de argentina sale 900 (300 * 3 * 1, ya que es conmemorativa y dice "zarate", asumiendo que el coeficiente de argentina es 1, sin incremento de antigüedad)
+	assert.equals(900, estArg.cotizacion())
+}
+test "La estampilla ordinaria, cuesta segun el pais" {
+	//la de japon sale 3000, suponiendo que el coeficiente de japón es 10, como es ordinaria, es 300 * 10, sin incremento de antigüedad)
+	assert.equals(3000, estJap.cotizacion())
+}
+
+test "La estampilla ordinaria antigua tiene incremento" {
+	//Si la estampilla de japón fuera del año 1918, saldría 3010 (300 * 10 más el incremento de antigüedad correspondiente a dos años 5*2)
+	estJap.emision(1918)
+	assert.equals(3000+2*5, estJap.cotizacion())
+}
+test "La estampilla ordinaria muy antigua tiene el incremento maximo" {
+	//Y si fuera del año 1880, su cotizacion ascendería a 3150 (300 * 10, más un incremento de antiguedad de 150, por mas que sean 40 los años de diferencia)
+	estJap.emision(1880)
+	assert.equals(3000+150, estJap.cotizacion())
+}
+
+test "La estampilla fallada sale una fortuna" {
+	//Pero si japón se hubiera fundado luego de 1880, dicha estampilla valdría 1000000 sin hacer ninguna cuenta.
+	estJap.emision(1880)
+	japon.inicio(1945)
+	assert.equals(1000000, estJap.cotizacion())
+}
+
+
+test "Paso el tiempo y la estampilla que se hizo antigua aumento su valor" {
+    tiempo.pasoEltiempo(60)
+	assert.equals(900+5, estArg.cotizacion())
+}
+
+test "Cotizacion de una hojita block "{
+	//Su cotización es de 690 (115 * 3 * 2, asumiendo que rusia tiene un coeficiente 3, el doble por ser conmemorativa y sin adicional de antigüedad)
+	assert.equals(690,estUrss.cotizacion())
+}
 
 }
