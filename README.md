@@ -24,7 +24,7 @@ Hay también algunas otras diferencias que son de interés.
 
 - Algunas estampillas son ordinarias y otras son conmemorativas. De estas últimas se registra una descripcion del motivo que conmemoran. Por ejemplo, la de Japón es ordinaria, en cambio la de Argentina es conmemorativa y tiene por motivo "Complejo Zarate - Brazo Largo".
 - Las estampillas que tienen más de 100 años se consideran antiguas, las otras son modernas. Todos los años se siguen emitiendo nuevas estampillas, obviamente modernas, pero también algunas que eran modernas y estaban al límite, pasan a considerarse antiguas.
-- Una estampilla se considera fallada cuando tiene una fecha de emisión en la que el país de emisión no existía. Por ejemplo, Yugoslavia existió desde 1918 hasta 1991; si hay una estampilla de yugoslavia del año 1992, se considera fallada.
+- Una estampilla se considera fallada cuando tiene una fecha de emisión en la que el país de emisión no existía. Por ejemplo, la URSS existió desde 1911 hasta 1991; si hay una estampilla soviética del año 1992, se considera fallada.
 
 ### Cotizaciones
 
@@ -52,10 +52,10 @@ Por ejemplo:
 
 ![](estampillarusia.jpg)
 
-_Hojita block de Rusia, 1989, con valor facial de 115. (Esta formada por 6 estampillas de diferente valor facial cada una, todas de Rusia del mismo año) Su cotización es de  690 (115 * 3 * 2, asumiendo que rusia tiene un coeficiente 3, el doble por ser conmemorativa y sin adicional de antigüedad)_
+_Hojita block de URSS, 1989, con valor facial de 115. (Esta formada por 6 estampillas de diferente valor facial cada una, todas de la URSS del mismo año) Su cotización es de  690 (115 * 3 * 2, asumiendo que rusia tiene un coeficiente 3, el doble por ser conmemorativa y sin adicional de antigüedad)_
 
   -  Implementarlo para que todo siga funcionando. ¿Que conceptos facilitan esta incorporación?
   -  En caso que pueda haber gente que tenga suelta alguna de las estampillas que forma parte de una hojita block, o que haya dos hojitas block diferentes que contienen la misma estampilla. ¿En qué puede afectar a la determinación de si una estampilla es común? 
-  -  ¿Qué alternativas de solución hay, en caso que la cantidad de estampillas de una persona, en el caso de una hojita block se cuenta como una o como la cantidad de estampillas que contiene? (Por ejemplo, si alguien tiene la de argentina y la hojita de Rusia, ¿tiene 2 o 7 estampillas?) Hacer el código de una de las alternativas y comentar cómo sería la otra) 
+  -  ¿Qué alternativas de solución hay, en caso que la cantidad de estampillas de una persona, en el caso de una hojita block se cuenta como una o como la cantidad de estampillas que contiene? (Por ejemplo, si alguien tiene la hojita de la URSS, ¿tiene 1 o 6 estampillas?) Hacer el código de una de las alternativas y comentar cómo sería la otra) 
 
 8. Hacer al menos un test.
